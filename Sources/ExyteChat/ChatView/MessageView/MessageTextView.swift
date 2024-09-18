@@ -15,6 +15,7 @@ struct MessageTextView: View {
     var body: some View {
         if let text = text, !text.isEmpty {
             textView(text)
+                .textSelection(.enabled)
         }
     }
 

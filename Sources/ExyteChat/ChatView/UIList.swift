@@ -514,11 +514,8 @@ struct UIList<MessageContent: View, InputView: View>: UIViewRepresentable {
                     .transition(.scale)
                     .background(MessageMenuPreferenceViewSetter(id: row.id))
                     .rotationEffect(Angle(degrees: (type == .conversation ? 180 : 0)))
-                    .onTapGesture { }
-                    .applyIf(showMessageMenuOnLongPress) {
-                        $0.onLongPressGesture {
-                            self.viewModel.messageMenuRow = row
-                        }
+                    .onTapGesture {
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }
             }
             .minSize(width: 0, height: 0)
