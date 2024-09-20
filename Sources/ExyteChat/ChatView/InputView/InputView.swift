@@ -15,7 +15,7 @@ public enum InputViewStyle {
     var placeholder: String {
         switch self {
         case .message:
-            return "Type a message..."
+            return "Chat with AI"
         case .signature:
             return "Add signature..."
         }
